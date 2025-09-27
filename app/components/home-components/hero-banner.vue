@@ -7,12 +7,12 @@
                 <div class="absolute inset-0 bg-contain bg-right-bottom rtl:bg-left-bottom bg-no-repeat bg-gray-200 opacity-45 sm:opacity-45 md:!opacity-80"
                     :style="{ backgroundImage: activeItem ? `url(${activeItem.image})` : '' }"></div>
                 <div
-                    class="absolute top-12 end-8 z-20 w-24 h-24 rounded-full bg-blue-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg ring-4 ring-white">
-                    ${{ activeItem?.price }}
+                    class="absolute top-12 end-8 z-20 w-fit h-24 rounded-lg bg-blue-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg ring-4 ring-white">
+                    {{ activeItem ? formatCurrency(Number(activeItem.price)) : '' }}
                 </div>
                 <div class="relative z-10 flex flex-col justify-center space-y-4 text-start p-6">
                     <span class="text-blue-600 font-bold text-sm">
-                        — THE BEST PLACE TO PLAY
+                        {{ t('home.the_best_place_to_play') }}
                     </span>
                     <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
                         {{ activeItem?.title }}
@@ -21,8 +21,8 @@
                         {{ activeItem?.description }}
                     </p>
                     <button
-                        class="bg-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-orange-600 transition-colors self-start flex items-center space-s-2">
-                        <span>SHOP NOW</span>
+                        class="bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-orange-600 transition-colors self-start flex items-center space-s-2">
+                        <span>{{ t('btn.shop_now') }}</span>
                         <icon name="material-symbols:arrow-right-alt-rounded" class="rtl:rotate-180"></icon>
                     </button>
                 </div>
@@ -51,19 +51,19 @@
                         <div>
                             <div
                                 class="absolute top-4 end-4 bg-yellow-400 text-gray-900 font-bold text-sm rounded-full py-1 px-3">
-                                29% OFF
+                                29% {{ t('products.off') }}
                             </div>
                             <span class="text-sm font-semibold tracking-wider uppercase">
-                                SUMMER SALES
+                                {{ t('products.summer_sales') }}
                             </span>
                             <h2 class="text-3xl font-extrabold mt-2">
-                                New Google <br />
-                                Pixel 6 Pro
+                                {{ t('products.new_google') }} <br />
+                                {{ t('products.pixel_pro') }}
                             </h2>
                         </div>
                         <button
-                            class="bg-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-orange-600 transition-colors self-start mt-4 flex items-center space-s-2">
-                            <span>SHOP NOW</span>
+                            class="bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-orange-600 transition-colors self-start mt-4 flex items-center space-s-2">
+                            <span>{{ t('btn.shop_now') }}</span>
                             <icon name="material-symbols:arrow-right-alt-rounded" class="rtl:rotate-180"></icon>
                         </button>
                     </div>
@@ -74,10 +74,10 @@
                     <img :src="'/img/02.png'" alt="img" class="w-36 object-fill" />
                     <!-- Product Info -->
                     <div class="flex flex-col justify-between">
-                        <h3 class="text-xl font-semibold text-gray-900">Xiaomi FlipBuds Pro</h3>
+                        <h3 class="text-xl font-semibold text-gray-900">{{ t('products.xiaomi_flipBuds_pro') }}</h3>
                         <button
                             class="bg-orange-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-4 flex items-center justify-center space-s-2">
-                            <span>SHOP NOW</span>
+                            <span>{{ t('btn.shop_now') }}</span>
                             <icon name="material-symbols:arrow-right-alt-rounded" class="rtl:rotate-180"></icon>
                         </button>
                     </div>
@@ -89,31 +89,31 @@
         <div
             class="bg-white rounded-xl shadow p-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border border-gray-100 my-4 divide-s">
             <div class="flex justify-center items-center gap-x-4 p-4">
-                <icon name="solar:box-bold-duotone" class="text-gray-600 flex-shrink-0"></icon>
+                <icon name="solar:box-bold-duotone" class="text-gray-600 flex-shrink-0 w-10 h-10" />
                 <div>
-                    <div class="font-bold text-gray-800 uppercase">24 HOURS RETURN</div>
-                    <div class="text-sm text-gray-500">100% money-back guarantee</div>
+                    <div class="font-bold text-gray-800 uppercase">{{ t('home.fasted_delivery') }}</div>
+                    <div class="text-sm text-gray-500">{{ t('home.delivery_in') }}</div>
                 </div>
             </div>
             <div class="flex justify-center items-center gap-x-4 p-4">
-                <icon name="solar:cup-star-bold-duotone" class="text-gray-600 flex-shrink-0"></icon>
+                <icon name="solar:cup-star-bold-duotone" class="text-gray-600 flex-shrink-0 w-10 h-10" />
                 <div>
-                    <div class="font-bold text-gray-800">24 HOURS RETURN</div>
-                    <div class="text-sm text-gray-600">100% money-back guarantee</div>
+                    <div class="font-bold text-gray-800 uppercase">{{ t('home.delivery_in') }}</div>
+                    <div class="text-sm text-gray-600">{{ t('home.hours_return') }}</div>
                 </div>
             </div>
             <div class="flex justify-center items-center gap-x-4 p-4">
-                <icon name="solar:wallet-money-bold-duotone" class="text-gray-600 flex-shrink-0"></icon>
+                <icon name="solar:wallet-money-bold-duotone" class="text-gray-600 flex-shrink-0 w-10 h-10" />
                 <div>
-                    <div class="font-bold text-gray-800">SECURE PAYMENT</div>
-                    <div class="text-sm text-gray-600">Your money is safe</div>
+                    <div class="font-bold text-gray-800 uppercase">{{ t('home.secure_payment') }}</div>
+                    <div class="text-sm text-gray-600">{{ t('home.your_money_is_safe') }}</div>
                 </div>
             </div>
             <div class="flex justify-center items-center gap-x-4 p-4">
-                <icon name="solar:call-medicine-bold-duotone" class="text-gray-600 flex-shrink-0"></icon>
+                <icon name="solar:call-medicine-bold-duotone" class="text-gray-600 flex-shrink-0 w-10 h-10" />
                 <div>
-                    <div class="font-bold text-gray-800">SUPPORT 24/7</div>
-                    <div class="text-sm text-gray-600">Live contact/message</div>
+                    <div class="font-bold text-gray-800 uppercase">{{ t('home.support') }}</div>
+                    <div class="text-sm text-gray-600">{{ t('home.live_contact_message') }}</div>
                 </div>
             </div>
         </div>
@@ -121,25 +121,28 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n()
+const { formatCurrency } = useCurrencyLocale();
+
 const carouselItems = ref([
     {
         id: 1,
-        title: 'Xbox Consoles',
-        description: 'Save up to 50% on select Xbox games. Get 3 months of PC Game Pass for $2 USD.',
+        title: t('products.xbox_consoles'),
+        description: t('products.save_up_to_on_select_xbox_games_get_months_of_pc_game_pass_for_usd'),
         image: '/img/x-box.png',
         price: '1999'
     },
     {
         id: 2,
-        title: 'PlayStation 5',
-        description: 'Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio.',
+        title: t('products.playStation'),
+        description: t('products.experience_lightningfast_loading_with_an_ultrahighspeed_deeper_immersion_with_support_for_haptic_feedback_adaptive_triggers_and_audio'),
         image: '/img/ps5.png',
         price: '2999'
     },
     {
         id: 3,
-        title: 'Modern Silver Laptop',
-        description: 'Save up to 30% on select Laptop. Get 3 months of PC Game Pass for $2 USD.',
+        title: t('products.modern_silver_laptop'),
+        description: t('products.save_up_to_on_select_laptop_get_months_of_pc_game_pass_for_usd'),
         image: '/img/laptop.png',
         price: '3999'
     },

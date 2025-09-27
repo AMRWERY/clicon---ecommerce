@@ -6,17 +6,18 @@
                     <div
                         class="bg-[#ead574] rounded-lg p-6 text-center text-gray-800 h-full flex flex-col justify-between">
                         <div>
-                            <p class="text-sm font-semibold uppercase mb-2">Computer & Accessories</p>
-                            <h2 class="text-4xl font-bold mb-2">32% Discount</h2>
-                            <p class="mb-4">For all electronics products</p>
+                            <p class="text-sm font-semibold uppercase mb-2">{{ t('home.computer_accessories') }}</p>
+                            <h2 class="text-4xl font-bold mb-2">32% {{ t('home.discount') }}</h2>
+                            <p class="mb-4">{{ t('home.for_all_electronics_products') }}</p>
                             <div class="flex items-center justify-center text-sm mb-6">
-                                <span>Offers ends in:</span>
-                                <span class="ms-2 px-3 py-1 bg-white rounded-md font-semibold text-gray-800">ENDS OF
-                                    CHRISTMAS</span>
+                                <span>{{ t('home.offers_ends_in') }}</span>
+                                <span
+                                    class="ms-2 px-3 py-1 bg-white rounded-md font-semibold text-gray-800 uppercase">{{
+                                        t('home.ends_of_christmas') }}</span>
                             </div>
                             <button
                                 class="w-full bg-orange-500 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors">
-                                Shop Now
+                                {{ t('btn.shop_now') }}
                                 <icon name="material-symbols:arrow-right-alt-rounded" class="ms-2 rtl:rotate-180">
                                 </icon>
                             </button>
@@ -27,27 +28,30 @@
 
                 <div class="lg:col-span-3">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4 md:mb-0">Featured Products</h2>
-                        <div class="flex items-center space-s-4 text-sm font-medium text-gray-500 flex-wrap">
-                            <button class="text-orange-500 border-b-2 border-orange-500 pb-1">All Product</button>
-                            <button class="hover:text-gray-900">Smart Phone</button>
-                            <button class="hover:text-gray-900">Laptop</button>
-                            <button class="hover:text-gray-900">Headphone</button>
-                            <button class="hover:text-gray-900">TV</button>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4 md:mb-0">{{ t('home.featured_products') }}</h2>
+                        <ul class="flex items-center space-s-4 text-sm font-medium text-gray-500 flex-wrap">
+                            <li v-for="tab in tabs" :key="tab" :class="[
+                                activeTab === tab
+                                    ? 'text-orange-500 border-b-2 border-orange-500 pb-1'
+                                    : 'hover:text-gray-900',
+                                'cursor-pointer',
+                            ]" @click="activeTab = tab">
+                                {{ t(`tabs.${tab.toLowerCase().replace(' ', '_')}`) }}
+                            </li>
                             <button class="flex items-center text-orange-500 hover:underline">
-                                Browse All Product
+                                {{ t('btn.browse_all_product') }}
                                 <icon name="material-symbols:arrow-right-alt-rounded" class="ms-1 rtl:rotate-180">
                                 </icon>
                             </button>
-                        </div>
+                        </ul>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div v-for="product in products" :key="product.id"
+                        <div v-for="product in filteredProducts" :key="product.id"
                             class="bg-white rounded-lg shadow-sm overflow-hidden group">
                             <div class="relative p-4">
                                 <span v-if="product.badge"
-                                    class="absolute top-4 start-4 text-xs font-semibold px-2 py-1 rounded text-white"
+                                    class="absolute top-4 start-4 text-xs font-semibold px-2 py-1 rounded text-white uppercase"
                                     :class="product.badge.class">
                                     {{ product.badge.text }}
                                 </span>
@@ -99,13 +103,15 @@
                 <div class="rounded-lg p-8 flex items-center justify-between bg-gray-200">
                     <div class="w-1/2">
                         <span
-                            class="text-sm font-bold px-3 py-1 rounded-md mb-4 inline-block bg-blue-500 text-white">Introducing</span>
-                        <h2 class="text-3xl font-bold mb-2 text-gray-900">New Apple Homepod Mini</h2>
-                        <p class="text-sm mb-6 text-gray-600">Jam-packed with innovation, HomePod mini delivers
-                            unexpectedly.</p>
+                            class="text-sm font-bold px-3 py-1 rounded-md mb-4 inline-block bg-blue-500 text-white uppercase">{{
+                                t('products.introducing') }}</span>
+                        <h2 class="text-3xl font-bold mb-2 text-gray-900">{{ t('products.new_apple_homepod_mini') }}
+                        </h2>
+                        <p class="text-sm mb-6 text-gray-600">{{
+                            t('products.jam_packed_with_innovation_homePod_mini_delivers_unexpectedly') }}</p>
                         <button
                             class="bg-orange-500 text-white font-bold py-2 px-6 rounded-lg flex items-center hover:bg-orange-600 transition-colors">
-                            Shop Now
+                            {{ t('btn.shop_now') }}
                             <icon name="material-symbols:arrow-right-alt-rounded" class="ms-1 rtl:rotate-180"></icon>
                         </button>
                     </div>
@@ -117,21 +123,22 @@
                 <div class="rounded-lg p-8 flex items-center justify-between bg-gray-800 text-white">
                     <div class="w-1/2">
                         <span
-                            class="text-sm font-bold px-3 py-1 rounded-md mb-4 inline-block bg-yellow-400 text-gray-900">Introducing
-                            New</span>
-                        <h2 class="text-3xl font-bold mb-2 text-white">Xiaomi Mi 11 Ultra 12GB+256GB</h2>
-                        <p class="text-sm mb-6 text-gray-300">*Data provided by internal laboratories. Industry
-                            measurment.</p>
+                            class="text-sm font-bold px-3 py-1 rounded-md mb-4 inline-block bg-yellow-400 text-gray-900 uppercase">{{
+                                t('products.introducing_new') }}</span>
+                        <h2 class="text-3xl font-bold mb-2 text-white">{{ t('products.xiaomi_mi_ultra') }}</h2>
+                        <p class="text-sm mb-6 text-gray-300">{{
+                            t('products.data_provided_by_internal_laboratories_industry_measurment') }}</p>
                         <button
                             class="bg-orange-500 text-white font-bold py-2 px-6 rounded-lg flex items-center hover:bg-orange-600 transition-colors">
-                            Shop Now
+                            {{ t('btn.shop_now') }}
                             <icon name="material-symbols:arrow-right-alt-rounded" class="ms-1 rtl:rotate-180"></icon>
                         </button>
                     </div>
                     <div class="relative w-1/2 flex justify-end">
                         <img src="/img/xiaomi-mobile.png" alt="xiaomi-mobile" class="max-h-48" />
                         <span
-                            class="absolute top-4 end-4 bg-blue-500 text-white text-lg font-bold p-4 rounded-full flex items-center justify-center">$590</span>
+                            class="absolute top-4 end-4 bg-blue-500 text-white text-lg font-bold p-4 rounded-full flex items-center justify-center">{{
+                            formatCurrency(590) }}</span>
                     </div>
                 </div>
             </div>
@@ -142,19 +149,29 @@
 <script lang="ts" setup>
 import type { Product } from '@/types/products';
 
-// Dummy data that would typically come from an API
+const { t } = useI18n()
+const { formatCurrency } = useCurrencyLocale();
+
 const products = ref<Product[]>([
-    { id: 1, name: 'TOZO T6 True Wireless Earbuds Bluetooth Headphon...', imageUrl: '/img/prod-08.png', originalPrice: 70, rating: 5, reviewCount: 738, badge: { text: 'HOT', class: 'bg-red-500' } },
-    { id: 2, name: 'Samsung Electronics Samsung Galaxy S21 5G', imageUrl: '/img/prod-09.png', originalPrice: 2300, rating: 5, reviewCount: 536 },
-    { id: 3, name: 'Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...', imageUrl: '/img/prod-010.png', originalPrice: 360, rating: 4, reviewCount: 423, badge: { text: 'BEST DEALS', class: 'bg-blue-500' } },
-    { id: 4, name: 'Portable Wshing Machine, 11lbs capacity Model 18NMF...', imageUrl: '/img/prod-011.png', originalPrice: 80, rating: 4, reviewCount: 816 },
-    { id: 5, name: 'Wired Over-Ear Gaming Headphones with USB', imageUrl: '/img/prod-012.png', originalPrice: 1500, rating: 4, reviewCount: 647 },
-    { id: 6, name: 'Polaroid 57-Inch Photo/Video Tripod with Deluxe Tripod Ca...', imageUrl: '/img/prod-013.png', discountedPrice: 1200, originalPrice: 1600, rating: 3, reviewCount: 877, badge: { text: '25% OFF', class: 'bg-green-500' } },
-    { id: 7, name: 'Dell Optiplex 7000x7480 All-in-One Computer Monitor', imageUrl: '/img/computer.png', originalPrice: 250, rating: 5, reviewCount: 426 },
-    { id: 8, name: '4K UHD LED Smart TV with Chromecast Built-in', imageUrl: '/img/prod-014.png', originalPrice: 220, rating: 5, reviewCount: 583, badge: { text: 'SALE', class: 'bg-green-500' } },
+    { id: 1, name: t('products.true_wireless_earbuds_bluetooth_headphon'), imageUrl: '/img/prod-08.png', originalPrice: 70, rating: 5, reviewCount: 738, badge: { text: t('products.hot'), class: 'bg-red-500' }, category: 'Headphones' },
+    { id: 2, name: t('products.samsung_electronics_samsung_galaxy'), imageUrl: '/img/prod-09.png', originalPrice: 2300, rating: 5, reviewCount: 536, category: 'Smart Phones' },
+    { id: 3, name: t('products.samsung_electronics_samsung_galaxy'), imageUrl: '/img/prod-010.png', originalPrice: 360, rating: 4, reviewCount: 423, badge: { text: t('products.best_deals'), class: 'bg-blue-500' }, category: 'TV' },
+    { id: 4, name: t('products.amazon_basics_high_speed_cable'), imageUrl: '/img/prod-011.png', originalPrice: 80, rating: 4, reviewCount: 816, category: 'Other' },
+    { id: 5, name: t('products.wired_over_ear_gaming_headphones_with'), imageUrl: '/img/prod-012.png', originalPrice: 1500, rating: 4, reviewCount: 647, category: 'Headphones' },
+    { id: 6, name: t('products.polaroid_photo_video_tripod_with_deluxe_tripod'), imageUrl: '/img/prod-013.png', discountedPrice: 1200, originalPrice: 1600, rating: 3, reviewCount: 877, badge: { text: `25% ${t('products.off')}`, class: 'bg-green-500' }, category: 'Other' },
+    { id: 7, name: t('products.dell_optiplex_all_in_one_computer_monitor'), imageUrl: '/img/computer.png', originalPrice: 250, rating: 5, reviewCount: 426, category: 'Laptops' },
+    { id: 8, name: t('products.smart_tv_with_chromecast_built_in'), imageUrl: '/img/prod-014.png', originalPrice: 220, rating: 5, reviewCount: 583, badge: { text: 'SALE', class: 'bg-green-500' }, category: 'TV' },
 ]);
 
-const { formatCurrency } = useCurrencyLocale();
+const tabs = ['All Product', 'Smart Phones', 'Laptops', 'Headphones', 'TV'];
+const activeTab = ref('All Product');
+
+const filteredProducts = computed(() => {
+    if (activeTab.value === 'All Product') {
+        return products.value;
+    }
+    return products.value.filter((product) => product.category === activeTab.value);
+});
 </script>
 
 <style scoped>

@@ -56,7 +56,7 @@
 
                     <div class="flex-1 flex justify-center px-4">
                         <div class="relative w-full max-w-md">
-                            <input type='text' placeholder='Search for anything...'
+                            <input type='text' :placeholder="t('form.search_for_anything')"
                                 class="w-full bg-gray-100 border border-gray-300 focus:bg-transparent px-4 pe-10 rounded h-10 outline-none text-sm transition-all focus:bg-gray-100" />
                             <div class="absolute inset-y-0 end-0 flex items-center pe-3">
                                 <icon name="tabler:search" class="text-gray-500"></icon>
@@ -68,7 +68,8 @@
                         <ul class="flex items-center justify-center space-s-6">
                             <li class="cursor-pointer">
                                 <span class="relative">
-                                    <icon name="solar:cart-large-line-duotone" class="text-white w-[26px] h-[26px]"></icon>
+                                    <icon name="solar:cart-large-line-duotone" class="text-white w-[26px] h-[26px]">
+                                    </icon>
                                     <span
                                         class="absolute start-auto -ms-1 -top-3 rounded-full bg-white px-1 py-0 text-xs text-gray-800 font-semibold">2</span>
                                 </span>

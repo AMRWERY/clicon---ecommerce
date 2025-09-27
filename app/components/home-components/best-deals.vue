@@ -4,24 +4,24 @@
             <div class="mx-auto px-4 sm:px-6 lg:px-16">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
                     <div class="flex items-center gap-x-4 sm:gap-x-6">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Best Deals</h2>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">{{ t('home.best_deals') }}</h2>
                         <div class="flex items-center gap-x-2">
-                            <span class="text-sm text-gray-500">Deals ends in</span>
+                            <span class="text-sm text-gray-500">{{ t('home.deals_ends_in') }}</span>
                             <div
                                 class="flex items-center gap-x-1 bg-yellow-400 text-gray-900 font-bold text-sm px-3 py-1.5 rounded-md">
-                                <span>{{ countdown.days }}d</span>
+                                <span>{{ countdown.days }}{{ t('home.d') }}</span>
                                 <span>:</span>
-                                <span>{{ countdown.hours }}h</span>
+                                <span>{{ countdown.hours }}{{ t('home.h') }}</span>
                                 <span>:</span>
-                                <span>{{ countdown.minutes }}m</span>
+                                <span>{{ countdown.minutes }}{{ t('home.m') }}</span>
                                 <span>:</span>
-                                <span>{{ countdown.seconds }}s</span>
+                                <span>{{ countdown.seconds }}{{ t('home.s') }}</span>
                             </div>
                         </div>
                     </div>
                     <router-link to=""
                         class="text-sm font-semibold text-blue-600 hover:text-blue-500 flex items-center gap-x-1 transition-colors">
-                        Browse All Product
+                        {{ t('btn.browse_all_product') }}
                         <icon name="material-symbols:arrow-right-alt-rounded" class="rtl:rotate-180"></icon>
                     </router-link>
                 </div>
@@ -41,14 +41,15 @@
                             <div class="absolute top-3 start-3 text-center flex flex-col gap-y-2">
                                 <span v-if="product.discount"
                                     class="text-xs font-bold bg-yellow-400 text-gray-900 px-2 py-1 rounded-md">{{
-                                        product.discount }}% OFF</span>
+                                        product.discount }}% {{ t('products.off') }}</span>
                                 <span v-if="product.isHot"
-                                    class="text-xs font-bold bg-red-500 text-white px-2 py-1 rounded-md">HOT</span>
+                                    class="text-xs font-bold bg-red-500 text-white px-2 py-1 rounded-md uppercase">{{
+                                    t('products.hot') }}</span>
                             </div>
 
                             <span v-if="product.isSoldOut"
-                                class="absolute top-3 start-3 text-xs font-bold bg-gray-500 text-white px-2 py-1 rounded-md">SOLD
-                                OUT</span>
+                                class="absolute top-3 start-3 text-xs font-bold bg-gray-500 text-white px-2 py-1 rounded-md uppercase">{{
+                                t('products.sold_out') }}</span>
 
                             <div
                                 class="absolute inset-0 bg-black/40 flex items-center justify-center gap-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -99,7 +100,7 @@
                                     class="flex-1 bg-orange-500 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-600 transition-colors">
                                     <div class="flex items-center justify-center gap-1">
                                         <icon name="mdi-light:cart"></icon>
-                                        <span>Add to Cart</span>
+                                        <span>{{ t('btn.add_to_cart') }}</span>
                                     </div>
                                 </button>
                                 <button
@@ -118,14 +119,16 @@
 <script lang="ts" setup>
 import type { Product } from '@/types/products'
 
+const { t } = useI18n()
+
 const products = ref<Product[]>([
-    { id: 1, name: 'Xbox Series S - 512GB SSD Console with Wireless Controller - EU Versio...', imageUrl: '/img/prod-01.png', discountedPrice: 442.12, originalPrice: 865.99, rating: 5, reviewCount: 52677, discount: 32, isHot: true, description: 'Games built using the Xbox Series X|S development kit showcase unparalleled load times, visuals.' },
-    { id: 2, name: 'Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear...', imageUrl: '/img/prod-02.png', originalPrice: 2300, rating: 4, reviewCount: 1234, isSoldOut: true },
-    { id: 3, name: 'Simple Mobile 4G LTE Prepaid Smartphone', imageUrl: '/img/prod-03.png', originalPrice: 220, rating: 4, reviewCount: 567 },
-    { id: 4, name: '4K UHD LED Smart TV with Chromecast Built-in', imageUrl: '/img/prod-04.png', discountedPrice: 150, originalPrice: 865, rating: 3, reviewCount: 890, discount: 19 },
-    { id: 5, name: 'Sony DSCHX8 High Zoom Point & Shoot Camera', imageUrl: '/img/prod-05.png', originalPrice: 1200, rating: 5, reviewCount: 4567 },
-    { id: 6, name: 'Dell Optiplex 7000x7480 All-in-One Computer Monitor', imageUrl: '/img/prod-06.png', originalPrice: 299, rating: 4, reviewCount: 321 },
-    { id: 7, name: 'Portable Wishing Machine, 11lbs capacity Model 18NMF...', imageUrl: '/img/prod-07.png', discountedPrice: 70, originalPrice: 865.99, rating: 2, reviewCount: 98 },
+    { id: 1, name: t('products.xbox_series_console_with_wireless_controller'), imageUrl: '/img/prod-01.png', discountedPrice: 442.12, originalPrice: 865.99, rating: 5, reviewCount: 52677, discount: 32, isHot: true, description: t('products.games_built_using_the_xbox_series_development_kit_showcase_unparalleled_load_times_visuals'), category: 'Headphones' },
+    { id: 2, name: t('products.bose_sport_earbuds_wireless_earphones'), imageUrl: '/img/prod-02.png', originalPrice: 2300, rating: 4, reviewCount: 1234, isSoldOut: true, category: 'Smart Phones' },
+    { id: 3, name: t('products.simple_mobile_prepaid_smartphone'), imageUrl: '/img/prod-03.png', originalPrice: 220, rating: 4, reviewCount: 567, category: 'TV' },
+    { id: 4, name: t('products.smart_tv_with_chromecast_built_in'), imageUrl: '/img/prod-04.png', discountedPrice: 150, originalPrice: 865, rating: 3, reviewCount: 890, discount: 19, category: 'Other' },
+    { id: 5, name: t('products.sony_high_zoom_point_shoot_camera'), imageUrl: '/img/prod-05.png', originalPrice: 1200, rating: 5, reviewCount: 4567, category: 'Headphones' },
+    { id: 6, name: t('products.dell_optiplex_all_in_one_computer_monitor'), imageUrl: '/img/prod-06.png', originalPrice: 299, rating: 4, reviewCount: 321, category: 'Other' },
+    { id: 7, name: t('products.portable_wishing_machine_capacity_model'), imageUrl: '/img/prod-07.png', discountedPrice: 70, originalPrice: 865.99, rating: 2, reviewCount: 98, category: 'TV' },
 ]);
 
 const countdown = reactive({

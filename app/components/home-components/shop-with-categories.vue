@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mx-auto px-4 sm:px-6 lg:px-12">
-      <p class="text-center font-bold text-3xl">Shop with Categories</p>
+      <p class="text-center font-bold text-3xl">{{ t('home.shop_with_categories') }}</p>
 
       <div class="relative w-full group">
         <div ref="container" class="flex items-center p-4 space-s-4 overflow-x-auto scroll-smooth hide-scrollbar">
@@ -29,6 +29,8 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n()
+
 interface Category {
   name: string;
   image: string;

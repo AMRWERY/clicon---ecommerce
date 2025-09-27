@@ -7,7 +7,7 @@
                     'bg-[#f2f4f5] text-gray-700 hover:text-gray-800': !isOpen
                 }"
                 class="rounded-sm text-sm font-medium cursor-pointer border-0 outline-0 flex items-center justify-center transition-colors duration-200">
-                All Categories
+                {{ t('btn.all_categories') }}
                 <icon name="material-symbols:keyboard-arrow-down-rounded" :class="{ 'rotate-180': isOpen }"
                     class="ms-1 mt-1 transition-transform duration-300"></icon>
             </base-button>
@@ -27,6 +27,7 @@
 <script lang="ts" setup>
 import type { MenuItem } from '@/types/categories-menu'
 
+const { t } = useI18n()
 const isOpen = ref(false);
 
 const toggleMenu = () => {
@@ -35,77 +36,77 @@ const toggleMenu = () => {
 
 const menuItems = ref<MenuItem[]>([
     {
-        text: 'Mobiles, Tablets & Accessories',
+        text: t('categories_menu.mobiles_tablets_accessories'),
         href: '#',
         iconPath: '/svg/smartphone.svg'
     },
     {
-        text: 'Computers & Office Supplies',
+        text: t('categories_menu.computers_office_supplies'),
         href: '#',
         iconPath: '/svg/laptop-computer.svg'
     },
     {
-        text: 'TVs & Electronics',
+        text: t('categories_menu.tv_electronics'),
         href: '#',
         iconPath: '/svg/tv.svg'
     },
     {
-        text: "Women's Fashion",
+        text: t('categories_menu.women_fashion'),
         href: '#',
         iconPath: '/svg/dress-stylish.svg'
     },
     {
-        text: "Men's Fashion",
+        text: t('categories_menu.men_fashion'),
         href: '#',
         iconPath: '/svg/coat-jacke.svg'
     },
     {
-        text: "Kids Fashion",
+        text: t('categories_menu.kids_fashion'),
         href: '#',
         iconPath: '/svg/short-trousers.svg'
     },
     {
-        text: "Health, Beauty & Perfumes",
+        text: t('categories_menu.health_beauty_perfumes'),
         href: '#',
         iconPath: '/svg/perfume.svg'
     },
     {
-        text: "Supermarket",
+        text: t('categories_menu.supermarket'),
         href: '#',
         iconPath: '/svg/supermarket.svg'
     },
     {
-        text: "Home, Furniture & Tools",
+        text: t('categories_menu.home_furniture_tools'),
         href: '#',
         iconPath: '/svg/furniture-home.svg'
     },
     {
-        text: "Kitchen & Appliances",
+        text: t('categories_menu.kitchen_appliances'),
         href: '#',
         iconPath: '/svg/kitchen-room.svg'
     },
     {
-        text: "Toys, Games & Baby",
+        text: t('categories_menu.toys_games_baby'),
         href: '#',
         iconPath: '/svg/baby-cartoon-cute-game.svg'
     },
     {
-        text: "Sports, Fitness & Outdoors",
+        text: t('categories_menu.sports_fitness_outdoors'),
         href: '#',
         iconPath: '/svg/dumbell-fitness.svg'
     },
     {
-        text: "Books",
+        text: t('categories_menu.books'),
         href: '#',
         iconPath: '/svg/books.svg'
     },
     {
-        text: "Video Games",
+        text: t('categories_menu.video_games'),
         href: '#',
         iconPath: '/svg/games-control.svg'
     },
     {
-        text: "Automotive",
+        text: t('categories_menu.automotive'),
         href: '#',
         iconPath: '/svg/front-car.svg'
     },
