@@ -1,0 +1,37 @@
+{
+  "home": {
+    "home_page": "الصفحه الرئيسيه"
+  },
+  "error_page": {
+    "sorry_we_couldnt_find_what_you_are_looking_for": "نأسف، لم نتمكن من العثور على ما تبحث عنه 😁!"
+  },
+  "btn": {
+    "shop_now": "تسوق الآن",
+    "go_back_home":"عد إلى الصفحة الرئيسية"
+  },
+  "languages_menu": {
+    "english": "إنجليزي",
+    "arabic": "عربي",
+    "ar": "ع"
+  },
+  "countries_menu": {
+    "egypt": "مصر",
+    "palestine": "فلسطين",
+    "saudi_arabia": "المملكة العربية السعودية",
+    "united_states_of_america": "الولايات المتحدة الأمريكية"
+  },
+  "sale_offer": {
+    "up_to": "يصل إلى",
+    "off": "خصم"
+  },
+  "layouts": {
+    "welcome_to_clicon_online_ecommerce_store": "مرحباً بكم في متجر Clicon للتجارة الإلكترونية.",
+    "follow_us": "تابعنا:"
+  },
+  "form": {
+    "sign_in_to_your_account": "قم بتسجيل الدخول إلى حسابك",
+    "email": "بريد إلكتروني",
+    "password": "كلمة المرور",
+    "minLengthError": "يجب أن تكون كلمة المرور 7 خانات"
+  }
+}

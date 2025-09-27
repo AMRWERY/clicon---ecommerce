@@ -1,0 +1,37 @@
+{
+  "home": {
+    "home_page": "Home Page"
+  },
+  "error_page": {
+    "sorry_we_couldnt_find_what_you_are_looking_for": "Sorry, We couldn't find what you are looking for 😁!"
+  },
+  "btn": {
+    "shop_now": "Shop Now",
+    "go_back_home":"Go back Home"
+  },
+  "languages_menu": {
+    "english": "English",
+    "arabic": "Arabic",
+    "ar": "Ar"
+  },
+  "countries_menu": {
+    "egypt": "Egypt",
+    "palestine": "Palestine",
+    "saudi_arabia": "Saudi Arabia",
+    "united_states_of_america": "United States of America"
+  },
+  "sale_offer": {
+    "up_to": "Up to",
+    "off": "OFF"
+  },
+  "layouts": {
+    "welcome_to_clicon_online_ecommerce_store": "Welcome to Clicon online eCommerce store.",
+    "follow_us": "Follow us:"
+  },
+  "form": {
+    "sign_in_to_your_account": "Sign in to your account",
+    "email": "Email",
+    "password": "Password",
+    "minLengthError": "Password must be 7 characters"
+  }
+}

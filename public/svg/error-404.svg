@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="emoji-404" viewBox="0 0 226 249.135" width="226" height="249.135">
+  <!-- Face background -->
+  <circle cx="113" cy="113" r="109" fill="#FFE585" stroke="#6E6E96" stroke-width="8" />
+
+  <!-- Eyes -->
+  <circle id="eye-left" cx="68.732" cy="93" r="9" fill="#6E6E96">
+    <animate attributeName="r" values="9;1;9" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle id="eye-right" cx="156.398" cy="93" r="9" fill="#6E6E96">
+    <animate attributeName="r" values="9;1;9" dur="3s" begin="0.2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Mouth -->
+  <ellipse id="mouth" cx="113" cy="150" rx="20" ry="8" fill="#FF0000" opacity="0.2">
+    <animate attributeName="ry" values="8;2;8" dur="2.5s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Bounce effect for whole face -->
+  <animateTransform attributeName="transform" attributeType="XML"
+    type="translate" values="0,0; 0,5; 0,0" dur="4s" repeatCount="indefinite"/>
+</svg>
