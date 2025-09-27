@@ -63,7 +63,8 @@
     "password": "كلمة المرور",
     "minLengthError": "يجب أن تكون كلمة المرور 7 خانات",
     "search_for_anything": "ابحث عن أي شيء...",
-    "enter_email_address": "أدخل عنوان بريدك الإلكتروني"
+    "enter_email_address": "أدخل عنوان بريدك الإلكتروني",
+    "type_your_message": "اكتب رسالتك..."
   },
   "tabs": {
     "all_product": "جميع المنتجات",
@@ -169,5 +170,14 @@
     "accessories": "إكسسوارات",
     "camera_photo": "الكاميرا والصور",
     "tv_homes": "التلفزيون والمنزل"
+  },
+  "support_chat": {
+    "support_team": "فريق الدعم",
+    "online_now": "متاح الأن",
+    "hello_how_can_help_you_today": "مرحباً! 👋 كيف يمكنني مساعدتك اليوم؟",
+    "support_agent_just_now": "موظف خدمة العملاء • الآن",
+    "typically_replies_within_minutes": "عادةً ما يتم الرد خلال 5 دقائق",
+    "you": "أنت",
+    "support_agent": "موظف خدمة العملاء"
   }
 }

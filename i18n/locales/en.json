@@ -63,7 +63,8 @@
     "password": "Password",
     "minLengthError": "Password must be 7 characters",
     "search_for_anything": "Search for anything...",
-    "enter_email_address": "Enter Your Email address"
+    "enter_email_address": "Enter Your Email address",
+    "type_your_message": "Type your message..."
   },
   "tabs": {
     "all_product": "All Product",
@@ -169,5 +170,14 @@
     "accessories": "Accessories",
     "camera_photo": "Camera & Photo",
     "tv_homes": "TV & Homes"
+  },
+  "support_chat": {
+    "support_team": "Support Team",
+    "online_now": "Online now",
+    "hello_how_can_help_you_today": "Hello! 👋 How can I help you today?",
+    "support_agent_just_now": "Support Agent • Just now",
+    "typically_replies_within_minutes": "Typically replies within 5 minutes",
+    "you": "You",
+    "support_agent": "Support Agent"
   }
 }

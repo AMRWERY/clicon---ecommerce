@@ -24,7 +24,10 @@
 
               <nuxt-page />
 
-              <!-- scroll-to-top -->
+              <!-- support-chat-dialog component -->
+              <support-chat-dialog />
+
+              <!-- scroll-to-top component -->
               <scroll-to-top />
             </main>
           </div>

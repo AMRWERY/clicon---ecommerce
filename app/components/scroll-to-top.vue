@@ -1,9 +1,9 @@
 <template>
   <div>
     <button v-if="isVisible" @click="scrollToTop"
-      class="fixed z-50 flex items-center justify-center px-4 py-4 text-white bg-black border rounded-full shadow-lg bottom-20 end-8"
+      class="fixed z-50 flex items-center justify-center px-4 py-4 text-white bg-black border rounded-full shadow-lg bottom-16 end-8"
       aria-label="Scroll to top">
-      <icon name="material-symbols:keyboard-double-arrow-up-rounded"></icon>
+      <icon name="material-symbols:keyboard-double-arrow-up-rounded" class="w-8 h-8"></icon>
     </button>
   </div>
 </template>
