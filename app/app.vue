@@ -23,6 +23,9 @@
               <progress-bar />
 
               <nuxt-page />
+
+              <!-- scroll-to-top -->
+              <scroll-to-top />
             </main>
           </div>
 

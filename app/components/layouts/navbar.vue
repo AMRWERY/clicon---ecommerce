@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="sticky z-40 w-full py-3 text-white bg-[#1b6392]">
+        <nav class="sticky z-40 w-full py-3 text-white bg-[#1b6392] mt-12 sm:mt-16 md:mt-20">
             <div class="border-b pb-4 border-gray-100 border-opacity-30">
                 <div class="px-6 md:px-20 lg:px-32 flex flex-col md:flex-row items-center md:justify-between gap-y-2">
                     <nuxt-link to="" class="text-sm font-normal">{{

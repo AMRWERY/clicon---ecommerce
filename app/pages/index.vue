@@ -87,7 +87,7 @@ const { t } = useI18n()
 
 const productCategories = ref([
   { name: t('categories.computer_laptop'), image: '/img/computer.png' },
-  { name: t('categories.smartPhone'), image: '/img/smartphone.png' },
+  { name: t('categories.smartphone'), image: '/img/smartphone.png' },
   { name: t('categories.headphones'), image: '/img/headphones.png' },
   { name: t('categories.accessories'), image: '/img/accessories.png' },
   { name: t('categories.camera_photo'), image: '/img/camera.png' },
